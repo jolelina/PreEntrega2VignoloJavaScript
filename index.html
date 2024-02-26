@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Música - Simulador</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css"> <!-- Ruta al archivo CSS local -->
+</head>
+<body class="container mt-5">
+    <h1 class="text-center mb-4">Cursos de Música</h1>
+
+    <div id="registro" class="card p-3">
+        <h2 class="mb-3">Registro</h2>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" min="18" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="contrasenia">Contraseña:</label>
+            <input type="password" id="contrasenia" class="form-control">
+        </div>
+        <button onclick="registrarse()" class="btn btn-primary">Registrarse</button>
+    </div>
+
+    <div id="cursos" style="display:none;" class="card p-3 mt-4">
+        <h2 class="mb-3">Bienvenido/a <span id="nombreBienvenida"></span>!</h2>
+        <div class="form-group">
+            <label for="busqueda">Buscar curso:</label>
+            <input type="text" id="busqueda" class="form-control" oninput="generarOpciones()">
+        </div>
+        <div class="form-group">
+            <label for="filtrado">Filtrar por precio:</label>
+            <select id="filtrado" class="form-control" onchange="generarOpciones()">
+                <option value="todos">Todos</option>
+                <option value="menor6000">Menor a $6000</option>
+                <option value="mayor6000">Mayor o igual a $6000</option>
+            </select>
+        </div>
+        <h2 class="mb-3">Selecciona un curso:</h2>
+        <div class="form-group">
+            <select id="curso" class="form-control">
+                <!-- Opciones de cursos se agregarán dinámicamente aquí -->
+            </select>
+        </div>
+        <button onclick="agregarAlCarrito()" class="btn btn-primary mr-2">Agregar al carrito</button>
+
+        <div id="carrito" style="display:none;" class="card p-3 mt-4">
+            <h2 class="mb-3">Carrito de Compras</h2>
+            <ul id="listaCursos" class="list-group"></ul>
+            <button onclick="comprarCursos()" class="btn btn-success mt-3">Comprar Cursos</button>
+        </div>
+
+        <div class="form-group">
+            <label for="cuotas">Cantidad de cuotas:</label>
+            <input type="number" id="cuotas" min="1" max="3" value="1" class="form-control" onchange="mostrarPrecio()">
+        </div>
+        <div id="resultado" class="mt-3"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+

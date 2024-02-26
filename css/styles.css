@@ -1,0 +1,19 @@
+body {
+    background-color: #fff !important; /* Fondo blanco, !important para mayor prioridad */
+}
+
+.card {
+    background-color: #c990b7 !important; /* Fondo de las tarjetas en un tono tierra más oscuro */
+    color: #fff !important; /* Texto en color blanco para mayor contraste */
+}
+
+.btn-primary {
+    background-color: #ff00ff !important; /* Botones de color fucsia */
+    border-color: #ff00ff !important; /* Borde de los botones en color fucsia */
+    color: #fff !important; /* Texto en color blanco para mayor contraste */
+}
+
+.btn-primary:hover {
+    background-color: #cc00cc !important; /* Cambio de color al pasar el mouse */
+    border-color: #cc00cc !important;
+}
